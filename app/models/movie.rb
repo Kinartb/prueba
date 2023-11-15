@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
-begin
-    has_many :reviews
+    has_many :reviews, :dependent => :destroy
+    begin
+    
     before_save :capitalize_title
     def capitalize_title
         self.title = self.title.split(/\s+/).map(&:downcase).
@@ -20,6 +21,6 @@ begin
     def grandfathered?
         release_date && release_date < @@grandfathered_date
     end
-end
+    end
 end
 
