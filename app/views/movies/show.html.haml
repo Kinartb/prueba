@@ -12,4 +12,8 @@
 
 %h3 Description:
 = link_to 'Edit info', edit_movie_path(@movie)
+%br
 = link_to 'Back to movie list', movies_path
+%br
+=link_to 'Add a Review', new_movie_review_path(@movie.id) 
+%br
