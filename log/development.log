@@ -7300,3 +7300,52 @@ Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1
 ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
   
 app/controllers/reviews_controller.rb:25:in `create'
+Started POST "/movies/1/reviews" for 127.0.0.1 at 2023-11-15 11:33:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"potatoes"=>"5"}, "commit"=>"Create Review", "movie_id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `has_moviegoer_and_movie'
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.5ms | Allocations: 64021)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/reviews_controller.rb:25:in `create'
+Started POST "/movies/1/reviews" for 127.0.0.1 at 2023-11-15 11:33:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "review"=>{"potatoes"=>"5"}, "commit"=>"Create Review", "movie_id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `has_moviegoer_and_movie'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `create'
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("potatoes", "comments", "moviegoer_id", "movie_id") VALUES (?, ?, ?, ?)[0m  [["potatoes", 5], ["comments", nil], ["moviegoer_id", 1], ["movie_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:25:in `create'
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 56ms (ActiveRecord: 3.8ms | Allocations: 70007)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-11-15 11:33:31 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/show.html.haml within layouts/application
+  Rendered movies/show.html.haml within layouts/application (Duration: 8.4ms | Allocations: 13902)
+  Rendered layout layouts/application.html.haml (Duration: 51.1ms | Allocations: 42879)
+Completed 200 OK in 58ms (Views: 53.0ms | ActiveRecord: 0.2ms | Allocations: 48184)
+
+
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]

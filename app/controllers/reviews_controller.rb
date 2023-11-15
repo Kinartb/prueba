@@ -22,7 +22,12 @@ class ReviewsController < ApplicationController
     # assigned by the mass-assignment from params[:review], we set it
     # by using the << method on the association. We could also
     # set it manually with review.moviegoer = @current_user.
-    @current_user.reviews << @movie.reviews.build(params[:review])
+    @current_user.reviews << @movie.reviews.build(review_params)
     redirect_to movie_path(@movie)
+    end
+
+    private
+    def review_params
+        params.require(:review).permit(:potatoes)
     end
 end
