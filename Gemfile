@@ -5,7 +5,7 @@ ruby "3.0.2"
 
 gem 'omniauth'
 gem "omniauth-rails_csrf_protection"
-gem "omniauth-twitter"
+gem "omniauth-google-oauth2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"

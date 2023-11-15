@@ -12,6 +12,7 @@
       %th Release Date
       %th More Info
   %tbody
-    .content
-      = render 'layouts/movie_form'
+    - @movies.each do |movie|
+      .content
+        = render partial: 'layouts/movies_form', locals: {movie: movie}
         

@@ -9,3 +9,9 @@
   %body
     #main
       = yield
+      - if !session[:user_token]
+        = link_to 'Login with Google', '/auth/google_oauth2'
+      - else
+        = link_to 'Logout', '/sessions/logout', method: :delete
+      
+
