@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     def has_moviegoer_and_movie
         unless @current_user
             flash[:warning] = 'You must be logged in to create a review.'
-            redirect_to login_path
+            redirect_to root_path
         end
         unless (@movie = Movie.find(params[:movie_id]))
             flash[:warning] = 'Review must be for an existing movie.'
