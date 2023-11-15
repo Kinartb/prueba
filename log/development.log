@@ -4909,3 +4909,561 @@ Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 7249)
 
 
   [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers"[0m
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:38:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 2.1ms | Allocations: 3831)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 26.1ms | Allocations: 36797)
+  Rendered layout layouts/application.html.haml (Duration: 50.3ms | Allocations: 65265)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 0.5ms | Allocations: 77008)
+
+
+Started GET "/sessions/logout" for 127.0.0.1 at 2023-11-15 00:38:29 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 606)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:38:29 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.0ms | Allocations: 3994)
+  Rendered layout layouts/application.html.haml (Duration: 5.8ms | Allocations: 6624)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 7237)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2023-11-15 00:38:34 -0500
+Started GET "/auth/google_oauth2/callback?state=806868155a2f223fe42029616c50d71aed3b5f17b75ff1a5&code=4%2F0AfJohXl7Tsm28uzYHQhAXYhkeoEw5eVcG7mvCqxGhI7zQf-j7mhHhqBIx5hAymhgMozv7Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=uni.pe&prompt=consent" for 127.0.0.1 at 2023-11-15 00:38:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"806868155a2f223fe42029616c50d71aed3b5f17b75ff1a5", "code"=>"4/0AfJohXl7Tsm28uzYHQhAXYhkeoEw5eVcG7mvCqxGhI7zQf-j7mhHhqBIx5hAymhgMozv7Q", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"uni.pe", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."uid" = ? AND "moviegoers"."provider" = ? LIMIT ?[0m  [["uid", "113202289440658482565"], ["provider", "google_oauth2"], ["LIMIT", 1]]
+  ↳ app/models/moviegoer.rb:5:in `from_omniauth'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 16390)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 00:38:38 -0500
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:38:38 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 72)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.2ms | Allocations: 3897)
+  Rendered layout layouts/application.html.haml (Duration: 6.2ms | Allocations: 6536)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 7125)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:42:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 2.2ms | Allocations: 3831)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 29.4ms | Allocations: 36797)
+  Rendered layout layouts/application.html.haml (Duration: 53.3ms | Allocations: 65856)
+Completed 200 OK in 62ms (Views: 54.1ms | ActiveRecord: 0.5ms | Allocations: 77612)
+
+
+Started GET "/sessions/logout" for 127.0.0.1 at 2023-11-15 00:42:48 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 582)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:42:48 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.1ms | Allocations: 3994)
+  Rendered layout layouts/application.html.haml (Duration: 6.0ms | Allocations: 6641)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 7264)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2023-11-15 00:42:52 -0500
+Started GET "/auth/google_oauth2/callback?state=37d85421063ad94190ecdd9fb44ca59203d11efa4b85652a&code=4%2F0AfJohXk3P2FAsjEYOvhSWstGW26r2GGOFFduZkhNkd2MguvPWHm9_cMpu48QzhEA4-J7_Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=uni.pe&prompt=consent" for 127.0.0.1 at 2023-11-15 00:42:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"37d85421063ad94190ecdd9fb44ca59203d11efa4b85652a", "code"=>"4/0AfJohXk3P2FAsjEYOvhSWstGW26r2GGOFFduZkhNkd2MguvPWHm9_cMpu48QzhEA4-J7_Q", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"uni.pe", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."uid" = ? AND "moviegoers"."provider" = ? LIMIT ?[0m  [["uid", "113202289440658482565"], ["provider", "google_oauth2"], ["LIMIT", 1]]
+  ↳ app/models/moviegoer.rb:5:in `from_omniauth'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms | Allocations: 19288)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 00:42:56 -0500
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:42:56 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 72)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.4ms | Allocations: 3897)
+  Rendered layout layouts/application.html.haml (Duration: 6.6ms | Allocations: 6552)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 7145)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:43:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 1.9ms | Allocations: 3831)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 24.9ms | Allocations: 36796)
+  Rendered layout layouts/application.html.haml (Duration: 48.1ms | Allocations: 65917)
+Completed 200 OK in 56ms (Views: 48.9ms | ActiveRecord: 0.5ms | Allocations: 77667)
+
+
+Started GET "/sessions/logout" for 127.0.0.1 at 2023-11-15 00:43:21 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 597)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:43:21 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 97)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.3ms | Allocations: 3994)
+  Rendered layout layouts/application.html.haml (Duration: 6.2ms | Allocations: 6642)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 7259)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2023-11-15 00:43:22 -0500
+Started GET "/auth/google_oauth2/callback?state=79ea45bbb9d3d7b5d2d42cf7a5705ca1ae2588127a8773a3&code=4%2F0AfJohXk1RdAz5ZabGYw8InvfVkMtwl_AD4mLZnV1u7hcf89blEZJZSlOJ9O_5ZOt3-i6nA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=uni.pe&prompt=consent" for 127.0.0.1 at 2023-11-15 00:43:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"79ea45bbb9d3d7b5d2d42cf7a5705ca1ae2588127a8773a3", "code"=>"4/0AfJohXk1RdAz5ZabGYw8InvfVkMtwl_AD4mLZnV1u7hcf89blEZJZSlOJ9O_5ZOt3-i6nA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"uni.pe", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."uid" = ? AND "moviegoers"."provider" = ? LIMIT ?[0m  [["uid", "113202289440658482565"], ["provider", "google_oauth2"], ["LIMIT", 1]]
+  ↳ app/models/moviegoer.rb:5:in `from_omniauth'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 16414)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 00:43:26 -0500
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:43:26 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 72)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.6ms | Allocations: 3897)
+  Rendered layout layouts/application.html.haml (Duration: 5.6ms | Allocations: 6553)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 7152)
+
+
+Started GET "/sessions/logout" for 127.0.0.1 at 2023-11-15 00:43:29 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:43:29 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 5.4ms | Allocations: 3866)
+  Rendered layout layouts/application.html.haml (Duration: 7.9ms | Allocations: 6391)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 6927)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2023-11-15 00:43:30 -0500
+Started GET "/auth/google_oauth2/callback?state=79c8a2cacac49341a16921ceb27db072fa3a7b9ec4492819&code=4%2F0AfJohXlvobaLgpC-8Nk3Unn5AXn58U-UNwxFNZu-_zKRguIaDuk2mmbkqIocXZzAc-ZAgA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&hd=uni.pe&prompt=consent" for 127.0.0.1 at 2023-11-15 00:43:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"79c8a2cacac49341a16921ceb27db072fa3a7b9ec4492819", "code"=>"4/0AfJohXlvobaLgpC-8Nk3Unn5AXn58U-UNwxFNZu-_zKRguIaDuk2mmbkqIocXZzAc-ZAgA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "hd"=>"uni.pe", "prompt"=>"consent", "provider"=>"google_oauth2"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."uid" = ? AND "moviegoers"."provider" = ? LIMIT ?[0m  [["uid", "113202289440658482565"], ["provider", "google_oauth2"], ["LIMIT", 1]]
+  ↳ app/models/moviegoer.rb:5:in `from_omniauth'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 942)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-15 00:43:34 -0500
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:43:34 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.5ms | Allocations: 3861)
+  Rendered layout layouts/application.html.haml (Duration: 5.5ms | Allocations: 6421)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 6981)
+
+
+Started GET "/sessions/logout" for 127.0.0.1 at 2023-11-15 00:43:37 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 369)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:43:37 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.4ms | Allocations: 3866)
+  Rendered layout layouts/application.html.haml (Duration: 6.2ms | Allocations: 6395)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 6941)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-15 00:43:38 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 4.6ms | Allocations: 3859)
+  Rendered layout layouts/application.html.haml (Duration: 6.8ms | Allocations: 6383)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 6907)
+
+

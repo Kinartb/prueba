@@ -8,6 +8,9 @@
 
   %body
     #main
+      - flash.each do |type, msg|
+        %div
+          = msg
       = yield
       - if session[:user_id]
         = link_to 'Logout', '/sessions/logout', method: :delete
