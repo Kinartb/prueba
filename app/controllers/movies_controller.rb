@@ -2,9 +2,14 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @all_ratings = Movie.all_ratings
-    @ratings_to_show = params[:ratings]&.keys || @all_ratings
+    if params[:remembered_ratings]
+      pr = Hash[params[:remembered_ratings].map {|x| [x,1]}]
+    else
+      pr = params[:ratings]
+    end
+    @ratings_to_show = pr&.keys || @all_ratings
     if @ratings_to_show.present?
-      @movies = Movie.with_ratings(@ratings_to_show)
+      @movies = Movie.with_ratings(@ratings_to_show).order(params[:sort_var])
     end
   end
   def show

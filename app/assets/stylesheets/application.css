@@ -16,7 +16,7 @@
 /* Simple CSS styling for RottenPotatoes app */
 /* Add these lines to app/assets/stylesheets/application.css */
 
-html, body {
+/* html, body {
     margin: 0;
     padding: 0;
     background: White;
@@ -76,4 +76,30 @@ html, body {
     line-height: 25px;
     font-weight: bold;
     color: maroon;
+  } */
+
+  table#movies {
+    margin: 10px;
+    border-collapse: collapse;
+    width: 100%;
+  
+  }
+
+  table#movies th {
+    border: 2px solid white;
+    font-weight: bold;
+    color: black;
+    border-bottom-color: gray;
+    
+  }
+
+  .link-tabla{
+    color: #5d5c5e;
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  div#main {
+    margin: 0;
+    padding: 0 20px 20px;
   }
