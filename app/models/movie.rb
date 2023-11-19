@@ -20,6 +20,9 @@ class Movie < ActiveRecord::Base
     def grandfathered?
         release_date && release_date < @@grandfathered_date
     end
+    def self.all_ratings
+        pluck(:rating).uniq
+    end
     end
 end
 

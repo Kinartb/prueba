@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @all_ratings = Movie.all_ratings
+    @ratings_to_show = params[:ratings]&.keys || @all_ratings
   end
   def show
     id = params[:id] # retrieve movie ID from URI route
@@ -43,5 +45,6 @@ class MoviesController < ApplicationController
     params.require(:movie)
     params[:movie].permit(:title,:rating,:release_date)
   end
+  
 end
 
