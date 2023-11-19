@@ -4,12 +4,14 @@
 
 %h1 All Movies
 
-%table#movies
+%table#movies.table.table-sm.table-striped
   %thead
     %tr
-      %th Movie Title
+      %th.link-tabla 
+        = link_to "Movie Title", :sort_var => "title"
       %th Rating
-      %th Release Date
+      %th.link-tabla 
+        = link_to "Release Date", :sort_var => "release_date"
       %th More Info
   %tbody
     - @movies.each do |movie|
