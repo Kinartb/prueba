@@ -9944,3 +9944,387 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 0.6ms | Allocations: 8202)
 
 
+Started GET "/movies?remembered_ratings%5B%5D=R&sort_var=title" for 127.0.0.1 at 2023-11-19 01:33:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Parameters: {"remembered_ratings"=>["R"], "sort_var"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [["rating", "G"], ["rating", "R"], ["rating", "PG-13"], ["rating", "PG"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 2.7ms | Allocations: 3792)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 31.6ms | Allocations: 40571)
+  Rendered layout layouts/application.html.haml (Duration: 70.6ms | Allocations: 77206)
+Completed 200 OK in 84ms (Views: 72.0ms | ActiveRecord: 0.9ms | Allocations: 92754)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&ratings%5BPG-13%5D=1&ratings%5BPG%5D=1&commit=Refresh" for 127.0.0.1 at 2023-11-19 01:33:40 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "R"=>"1", "PG-13"=>"1", "PG"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [["rating", "G"], ["rating", "R"], ["rating", "PG-13"], ["rating", "PG"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.3ms | Allocations: 94)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 5.6ms | Allocations: 3859)
+  Rendered layout layouts/application.html.haml (Duration: 8.0ms | Allocations: 6488)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 8381)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&commit=Refresh" for 127.0.0.1 at 2023-11-19 01:33:44 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?)[0m  [["rating", "G"], ["rating", "PG"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.3ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.2ms | Allocations: 1684)
+  Rendered layout layouts/application.html.haml (Duration: 5.8ms | Allocations: 4191)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.4ms | Allocations: 5833)
+
+
+Started GET "/movies?sort_var=title" for 127.0.0.1 at 2023-11-19 01:33:45 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"sort_var"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [["rating", "G"], ["rating", "R"], ["rating", "PG-13"], ["rating", "PG"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.1ms | Allocations: 3756)
+  Rendered layout layouts/application.html.haml (Duration: 5.0ms | Allocations: 6263)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 7911)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 01:38:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2023-11-19 01:38:16 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?)[0m  [["rating", "G"], ["rating", "R"], ["rating", "PG-13"], ["rating", "PG"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 2.3ms | Allocations: 3787)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 32.9ms | Allocations: 40271)
+  Rendered layout layouts/application.html.haml (Duration: 58.2ms | Allocations: 72769)
+Completed 200 OK in 72ms (Views: 59.7ms | ActiveRecord: 1.0ms | Allocations: 88210)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-11-19 01:38:21 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?)[0m  [["rating", "G"], ["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.4ms | Allocations: 2840)
+  Rendered layout layouts/application.html.haml (Duration: 6.2ms | Allocations: 5348)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 7186)
+
+
+Started GET "/movies?remembered_ratings%5B%5D=G&remembered_ratings%5B%5D=R&sort_var=title" for 127.0.0.1 at 2023-11-19 01:38:22 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"remembered_ratings"=>["G", "R"], "sort_var"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?) ORDER BY title[0m  [["rating", "G"], ["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.7ms | Allocations: 2815)
+  Rendered layout layouts/application.html.haml (Duration: 4.5ms | Allocations: 5322)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 6995)
+
+
+Started GET "/movies?ratings%5BG%5D=1&commit=Refresh" for 127.0.0.1 at 2023-11-19 01:38:24 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ?[0m  [["rating", "G"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.3ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.0ms | Allocations: 2128)
+  Rendered layout layouts/application.html.haml (Duration: 5.5ms | Allocations: 4635)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 6288)
+
+
+Started GET "/movies?remembered_ratings%5B%5D=G&sort_var=title" for 127.0.0.1 at 2023-11-19 01:38:25 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"remembered_ratings"=>["G"], "sort_var"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ? ORDER BY title[0m  [["rating", "G"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.3ms | Allocations: 1502)
+  Rendered layout layouts/application.html.haml (Duration: 4.9ms | Allocations: 4009)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 5666)
+
+
+Started GET "/movies?ratings%5BR%5D=1&commit=Refresh" for 127.0.0.1 at 2023-11-19 01:38:26 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"R"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ?[0m  [["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.3ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.0ms | Allocations: 2487)
+  Rendered layout layouts/application.html.haml (Duration: 4.8ms | Allocations: 4993)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 6636)
+
+
+Started GET "/movies?remembered_ratings%5B%5D=R&sort_var=title" for 127.0.0.1 at 2023-11-19 01:38:28 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"remembered_ratings"=>["R"], "sort_var"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ? ORDER BY title[0m  [["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.5ms | Allocations: 2526)
+  Rendered layout layouts/application.html.haml (Duration: 4.5ms | Allocations: 5032)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 6665)
+
+
+Started GET "/movies?remembered_ratings%5B%5D=R&sort_var=release_date" for 127.0.0.1 at 2023-11-19 01:38:29 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"remembered_ratings"=>["R"], "sort_var"=>"release_date"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ? ORDER BY release_date[0m  [["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.9ms | Allocations: 2526)
+  Rendered layout layouts/application.html.haml (Duration: 11.4ms | Allocations: 5054)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 6700)
+
+
+Started GET "/movies?remembered_ratings%5B%5D=R&sort_var=title" for 127.0.0.1 at 2023-11-19 01:38:32 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"remembered_ratings"=>["R"], "sort_var"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ? ORDER BY title[0m  [["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 2.8ms | Allocations: 2526)
+  Rendered layout layouts/application.html.haml (Duration: 4.8ms | Allocations: 5034)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 6676)
+
+
+Started GET "/movies?remembered_ratings%5B%5D=R&sort_var=title" for 127.0.0.1 at 2023-11-19 01:38:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Parameters: {"remembered_ratings"=>["R"], "sort_var"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Pluck (0.0ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ? ORDER BY title[0m  [["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:33
+  Rendered layouts/_movies_form.html.haml (Duration: 2.0ms | Allocations: 3784)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 63)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 62)
+  Rendered movies/index.html.haml within layouts/application (Duration: 29.3ms | Allocations: 39569)
+  Rendered layout layouts/application.html.haml (Duration: 55.7ms | Allocations: 72046)
+Completed 200 OK in 68ms (Views: 57.0ms | ActiveRecord: 0.8ms | Allocations: 87531)
+
+
