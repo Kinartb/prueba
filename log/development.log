@@ -14175,3 +14175,99 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 6070)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-19 05:36:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2023-11-19 05:36:15 -0500
+  [1m[36mMovie Pluck (0.2ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Redirected to http://127.0.0.1:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 24ms (ActiveRecord: 0.9ms | Allocations: 7568)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-11-19 05:36:15 -0500
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [["rating", "G"], ["rating", "PG"], ["rating", "PG-13"], ["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:25
+  Rendered movies/index.html.haml within layouts/application (Duration: 74.4ms | Allocations: 39570)
+  Rendered layout layouts/application.html.haml (Duration: 192.8ms | Allocations: 77041)
+Completed 200 OK in 208ms (Views: 196.2ms | ActiveRecord: 0.9ms | Allocations: 82251)
+
+
+Started GET "/movies?sort=release_date" for 127.0.0.1 at 2023-11-19 05:36:19 -0500
+  [1m[36mMovie Pluck (0.3ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"release_date"}
+  [1m[36mMoviegoer Load (0.2ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Redirected to http://127.0.0.1:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1147)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2023-11-19 05:36:19 -0500
+  [1m[36mMovie Pluck (0.2ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY release_date[0m  [["rating", "G"], ["rating", "PG"], ["rating", "PG-13"], ["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:25
+  Rendered movies/index.html.haml within layouts/application (Duration: 7.9ms | Allocations: 2449)
+  Rendered layout layouts/application.html.haml (Duration: 12.8ms | Allocations: 4956)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 1.0ms | Allocations: 6158)
+
+
+Started GET "/movies?sort=title" for 127.0.0.1 at 2023-11-19 05:36:20 -0500
+  [1m[36mMovie Pluck (0.3ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+Processing by MoviesController#index as HTML
+  Parameters: {"sort"=>"title"}
+  [1m[36mMoviegoer Load (0.3ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Redirected to http://127.0.0.1:3000/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1018)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=title" for 127.0.0.1 at 2023-11-19 05:36:20 -0500
+  [1m[36mMovie Pluck (0.1ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"title"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN (?, ?, ?, ?) ORDER BY title[0m  [["rating", "G"], ["rating", "PG"], ["rating", "PG-13"], ["rating", "R"]]
+  ↳ app/views/movies/index.html.haml:25
+  Rendered movies/index.html.haml within layouts/application (Duration: 8.0ms | Allocations: 2411)
+  Rendered layout layouts/application.html.haml (Duration: 13.5ms | Allocations: 4917)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.7ms | Allocations: 6089)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BPG-13%5D=1&ratings%5BPG%5D=1&commit=Refresh" for 127.0.0.1 at 2023-11-19 05:36:22 -0500
+  [1m[36mMovie Pluck (0.2ms)[0m  [1m[34mSELECT "movies"."rating" FROM "movies"[0m
+  ↳ app/models/movie.rb:24:in `all_ratings'
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "PG-13"=>"1", "PG"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1365)
+
+
+  
+ActionController::UnfilteredParameters (unable to convert unpermitted parameters to hash):
+  
+app/controllers/movies_controller.rb:34:in `index'
