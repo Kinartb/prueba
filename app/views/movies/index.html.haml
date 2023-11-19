@@ -1,8 +1,24 @@
--# add to end of index.html.haml
- 
-= link_to 'Add new movie', new_movie_path
+-# add to beginning of index.html.haml
 
 %h1 All Movies
+
+= form_tag movies_path, method: :get, id: 'ratings_form' do
+  Include:
+  - @all_ratings.each do |rating|
+    .form-check.form-check-inline
+      = label_tag "ratings[#{rating}]", rating, class: 'form-check-label'
+      = check_box_tag "ratings[#{rating}]", "1", @ratings_to_show.include?(rating), class: 'form-check-input'
+
+  = submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary'
+
+
+
+
+-# add to end of index.html.haml
+
+= link_to 'Add new movie', new_movie_path
+
+
 
 %table#movies.table.table-sm.table-striped
   %thead
@@ -16,5 +32,8 @@
   %tbody
     - @movies.each do |movie|
       .content
-        = render partial: 'layouts/movies_form', locals: {movie: movie}
+        = render partial: 'layouts/movies_form', locals: { movie: movie }
+
+
+
         
