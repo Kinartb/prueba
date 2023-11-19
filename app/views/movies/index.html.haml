@@ -4,8 +4,8 @@
 = form_tag movies_path, :id => "ratings_form", :method => :get do
   Include: 
   - @all_ratings.each do |rating|
-    = rating
-    = check_box_tag "ratings[#{rating}]", 1, @ratings.include?(rating), :id => "ratings_#{rating}"
+    = label_tag  "ratings[#{rating}]", rating, class: 'form-check-label'
+    = check_box_tag "ratings[#{rating}]", "1", @ratings_to_show.include?(rating), class: 'form-check-input', :id => "ratings_#{rating}"
   = submit_tag "Refresh", :id => "ratings_submit"
 
 
@@ -17,9 +17,11 @@
 %table#movies.table.table-sm.table-striped
   %thead
     %tr
-      %th{params[:sort] == "title" ? {:class => "hilite"} : {}}= link_to "Movie Title", movies_path(:sort => "title"), :id => "title_header"
+      %th{class: "#{'hilite' if params[:sort] == "title"}"}
+        = link_to "Movie Title", movies_path(:key_ratings => @ratings_to_show, :sort => "title"), id: "title_header"
       %th Rating
-      %th{params[:sort] == "release_date" ? {:class => "hilite"} : {}}= link_to "Release Date", movies_path(:sort => "release_date"), :id => "release_date_header"
+      %th{class: "#{'hilite' if params[:sort] == "release_date"}"}
+        = link_to "Release Date", movies_path(:key_ratings => @ratings_to_show, :sort => "release_date"), id: "release_date_header"
       %th More Info
   %tbody
     - @movies.each do |movie|

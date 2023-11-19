@@ -12,31 +12,39 @@ class MoviesController < ApplicationController
   end
 
   def index
-    redirect = false
 
+    # Si se accedio por los links para ordenar la tabla
     if params[:sort]
       @sorting = params[:sort]
+    
+    # Si se accedio desde otro lado
     elsif session[:sort]
       @sorting = session[:sort]
-      redirect = true
     end
 
-    if params[:ratings]
-      @ratings = params[:ratings]
-    elsif session[:ratings]
-      @ratings = session[:ratings]
-      redirect = true
+    # Si se accedio por los links para ordenar tabla
+    if params[:key_ratings]
+      @ratings_to_show = params[:key_ratings]
+    
+    # Si se accedio por el boton "Refresh" para clasificar ratings
+    elsif params[:commit]
+      @ratings_to_show = params[:ratings]&.keys || @all_ratings
+
+    # Si se accedio por otro lado
+    elsif session[:key_ratings]
+      @ratings_to_show = session[:key_ratings]
+    
     else
-      @ratings = Hash[@all_ratings.map { |rat| [rat, 1] }]
-      redirect = true
+      @ratings_to_show = @all_ratings
     end
 
-    redirect_to movies_path(sort: @sorting, ratings: @ratings) and return if redirect
 
-    @movies = Movie.where(rating: @ratings.keys).order(@sorting ? @sorting : :id).all
 
+    @movies = Movie.with_ratings(@ratings_to_show).order(@sorting ? @sorting : :id)
+
+    # Se guardan las configuraciones en la sesion
     session[:sort] = @sorting
-    session[:ratings] = @ratings
+    session[:key_ratings] = @ratings_to_show
   end
 
   def new
@@ -77,6 +85,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :rating, :release_date, :otros_parametros, ratings: [])
+    params.require(:movie).permit(:title, :rating, :release_date, :otros_parametros, :rem_ratings, :sort)
   end
 end

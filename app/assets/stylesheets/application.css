@@ -82,7 +82,6 @@
     margin: 10px;
     border-collapse: collapse;
     width: 100%;
-  
   }
 
   table#movies th {
@@ -91,6 +90,10 @@
     color: black;
     border-bottom-color: gray;
     
+  }
+
+  table#movie th.hilite{
+    background-color: cyan;
   }
 
   .link-tabla{
@@ -104,8 +107,12 @@
     text-decoration: none;
   }
 
-  .hilite {
-    background-color: yelloworange; 
+  a#title_header {
+    color: red;
+  }
+
+  a#release_date_header{
+    color: orange;
   }
 
   div#main {
