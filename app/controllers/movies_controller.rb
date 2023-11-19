@@ -11,12 +11,13 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end 
   def create
-    if (@movie = Movie.create(movie_params))
-      redirect_to movies_path, :notice => "#{@movie.title} created."
-    else
-      flash[:alert] = "Movie #{@movie.title} could not be created: " +
-        @movie.errors.full_messages.join(",")
+    begin
+      @movie = Movie.create!(movie_params)
+    rescue ActiveRecord::ActiveRecordError => e
+      flash[:alert] = "La pelicula no pudo ser creada :(\n" + e.message
       render 'new'
+    else
+      redirect_to movies_path, :notice => "#{@movie.title} creada!"
     end
   end
   def edit
@@ -24,7 +25,7 @@ class MoviesController < ApplicationController
   end
   def update
     @movie = Movie.find params[:id]
-    if (@movie.update(movie_params))
+    if @movie.update(movie_params)
       redirect_to movie_path(@movie), :notice => "#{@movie.title} updated."
     else
       flash[:alert] = "#{@movie.title} could not be updated: " +

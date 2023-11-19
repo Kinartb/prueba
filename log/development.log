@@ -7349,3 +7349,533 @@ Completed 200 OK in 58ms (Views: 53.0ms | ActiveRecord: 0.2ms | Allocations: 481
 
   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+Started GET "/" for 127.0.0.1 at 2023-11-17 14:24:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2023-11-17 14:24:32 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 1.7ms | Allocations: 3830)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 23.5ms | Allocations: 36609)
+  Rendered layout layouts/application.html.haml (Duration: 47.5ms | Allocations: 65596)
+Completed 200 OK in 60ms (Views: 48.5ms | ActiveRecord: 0.7ms | Allocations: 79761)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-11-17 14:24:35 -0500
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 7.2ms | Allocations: 8607)
+  Rendered layout layouts/application.html.haml (Duration: 9.6ms | Allocations: 11246)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 12608)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:24:44 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"Potato", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Potato"], ["rating", "G"], ["description", nil], ["release_date", "2023-11-17 00:00:00"], ["created_at", "2023-11-17 19:24:44.032965"], ["updated_at", "2023-11-17 19:24:44.032965"]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms | Allocations: 4921)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-11-17 14:24:44 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 0.2ms | Allocations: 74)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 3.3ms | Allocations: 3898)
+  Rendered layout layouts/application.html.haml (Duration: 5.1ms | Allocations: 6529)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 7629)
+
+
+Started GET "/movies/27" for 127.0.0.1 at 2023-11-17 14:24:47 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/show.html.haml within layouts/application
+  Rendered movies/show.html.haml within layouts/application (Duration: 4.5ms | Allocations: 5858)
+  Rendered layout layouts/application.html.haml (Duration: 6.5ms | Allocations: 8364)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 10939)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-11-17 14:25:02 -0500
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 1.4ms | Allocations: 2264)
+  Rendered layout layouts/application.html.haml (Duration: 10.4ms | Allocations: 4780)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 5845)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:25:04 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 4556)
+
+
+  
+NameError (uninitialized constant MoviesController::ActionControllerError):
+  
+app/controllers/movies_controller.rb:16:in `rescue in create'
+app/controllers/movies_controller.rb:14:in `create'
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:26:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.5ms | Allocations: 31145)
+
+
+  
+NameError (uninitialized constant StandardError::ActionControllerError):
+  
+app/controllers/movies_controller.rb:16:in `rescue in create'
+app/controllers/movies_controller.rb:14:in `create'
+Started GET "/movies" for 127.0.0.1 at 2023-11-17 14:29:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 2.1ms | Allocations: 3831)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 25.2ms | Allocations: 36758)
+  Rendered layout layouts/application.html.haml (Duration: 48.8ms | Allocations: 65832)
+Completed 200 OK in 60ms (Views: 49.4ms | ActiveRecord: 0.7ms | Allocations: 80046)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-11-17 14:29:45 -0500
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 7.3ms | Allocations: 8707)
+  Rendered layout layouts/application.html.haml (Duration: 9.6ms | Allocations: 11346)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 12741)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:29:46 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 3753)
+
+
+  
+NoMethodError (undefined method `title' for nil:NilClass):
+  
+app/controllers/movies_controller.rb:17:in `rescue in create'
+app/controllers/movies_controller.rb:14:in `create'
+Started GET "/" for 127.0.0.1 at 2023-11-17 14:30:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/movies" for 127.0.0.1 at 2023-11-17 14:30:42 -0500
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 1.7ms | Allocations: 3830)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 24.0ms | Allocations: 36736)
+  Rendered layout layouts/application.html.haml (Duration: 48.3ms | Allocations: 65735)
+Completed 200 OK in 59ms (Views: 49.1ms | ActiveRecord: 0.7ms | Allocations: 79927)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-11-17 14:30:44 -0500
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 6.6ms | Allocations: 8606)
+  Rendered layout layouts/application.html.haml (Duration: 8.9ms | Allocations: 11245)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 12601)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:30:45 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 3753)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/movies_controller.rb:17:in `rescue in create'
+app/controllers/movies_controller.rb:14:in `create'
+Started GET "/movies" for 127.0.0.1 at 2023-11-17 14:31:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/index.html.haml within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.haml:15
+  Rendered layouts/_movies_form.html.haml (Duration: 1.7ms | Allocations: 3831)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_movies_form.html.haml (Duration: 0.1ms | Allocations: 61)
+  Rendered movies/index.html.haml within layouts/application (Duration: 25.1ms | Allocations: 36758)
+  Rendered layout layouts/application.html.haml (Duration: 48.8ms | Allocations: 65902)
+Completed 200 OK in 58ms (Views: 49.7ms | ActiveRecord: 0.6ms | Allocations: 80107)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-11-17 14:31:17 -0500
+Processing by MoviesController#new as HTML
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 6.1ms | Allocations: 8707)
+  Rendered layout layouts/application.html.haml (Duration: 7.9ms | Allocations: 11346)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 12757)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:31:18 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 4520)
+
+
+  
+NoMethodError (undefined method `join' for "/home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/validations.rb:80:in `raise_validation_error': \e[1mValidation failed: Title can't be blank (\e[1;4mActiveRecord::RecordInvalid\e[m\e[1m)\e[m\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/validations.rb:53:in `save!'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/transactions.rb:302:in `block in save!'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/transactions.rb:354:in `block in with_transaction_returning_status'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/transactions.rb:350:in `with_transaction_returning_status'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/transactions.rb:302:in `save!'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/suppressor.rb:54:in `save!'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/persistence.rb:55:in `create!'\n\tfrom /home/hector/Desktop/myrottenpotatoes/app/controllers/movies_controller.rb:15:in `create'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/abstract_controller/base.rb:215:in `process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal/rendering.rb:165:in `process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/abstract_controller/callbacks.rb:234:in `block in process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:118:in `block in run_callbacks'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actiontext-7.0.8/lib/action_text/rendering.rb:20:in `with_renderer'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actiontext-7.0.8/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `instance_exec'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:127:in `block in run_callbacks'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:138:in `run_callbacks'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/abstract_controller/callbacks.rb:233:in `process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal/rescue.rb:23:in `process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/notifications.rb:206:in `block in instrument'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/notifications/instrumenter.rb:24:in `instrument'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/notifications.rb:206:in `instrument'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal/instrumentation.rb:66:in `process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal/params_wrapper.rb:259:in `process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/railties/controller_runtime.rb:27:in `process_action'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/abstract_controller/base.rb:151:in `process'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionview-7.0.8/lib/action_view/rendering.rb:39:in `process'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal.rb:188:in `dispatch'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_controller/metal.rb:251:in `dispatch'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/routing/route_set.rb:32:in `serve'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/journey/router.rb:50:in `block in serve'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/journey/router.rb:32:in `each'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/journey/router.rb:32:in `serve'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/routing/route_set.rb:852:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/omniauth-2.1.1/lib/omniauth/strategy.rb:202:in `call!'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/omniauth-2.1.1/lib/omniauth/strategy.rb:169:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/omniauth-2.1.1/lib/omniauth/builder.rb:44:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/tempfile_reaper.rb:15:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/etag.rb:27:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/conditional_get.rb:40:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/head.rb:12:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/http/permissions_policy.rb:38:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/http/content_security_policy.rb:36:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/session/abstract/id.rb:266:in `context'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/session/abstract/id.rb:260:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/cookies.rb:704:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activerecord-7.0.8/lib/active_record/migration.rb:638:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/callbacks.rb:99:in `run_callbacks'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/callbacks.rb:26:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/executor.rb:14:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:132:in `call_app'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:28:in `block in call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `catch'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/web-console-4.2.1/lib/web_console/middleware.rb:17:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.0.8/lib/rails/rack/logger.rb:40:in `call_app'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.0.8/lib/rails/rack/logger.rb:25:in `block in call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/tagged_logging.rb:99:in `block in tagged'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/tagged_logging.rb:37:in `tagged'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/tagged_logging.rb:99:in `tagged'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.0.8/lib/rails/rack/logger.rb:25:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/remote_ip.rb:93:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/request_id.rb:26:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/method_override.rb:24:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/runtime.rb:22:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/activesupport-7.0.8/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/server_timing.rb:60:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/executor.rb:14:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/static.rb:23:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/rack-2.2.8/lib/rack/sendfile.rb:110:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/actionpack-7.0.8/lib/action_dispatch/middleware/host_authorization.rb:138:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/railties-7.0.8/lib/rails/engine.rb:530:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/puma-5.6.7/lib/puma/configuration.rb:252:in `call'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/puma-5.6.7/lib/puma/request.rb:77:in `block in handle_request'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/puma-5.6.7/lib/puma/thread_pool.rb:340:in `with_force_shutdown'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/puma-5.6.7/lib/puma/request.rb:76:in `handle_request'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/puma-5.6.7/lib/puma/server.rb:443:in `process_client'\n\tfrom /home/hector/.rbenv/versions/3.0.2/lib/ruby/gems/3.0.0/gems/puma-5.6.7/lib/puma/thread_pool.rb:147:in `block in spawn_thread'\n":String):
+  
+app/controllers/movies_controller.rb:17:in `rescue in create'
+app/controllers/movies_controller.rb:14:in `create'
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:33:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 6.7ms | Allocations: 16357)
+  Rendered layout layouts/application.html.haml (Duration: 28.5ms | Allocations: 45606)
+Completed 500 Internal Server Error in 55ms (Views: 30.7ms | ActiveRecord: 0.4ms | Allocations: 78922)
+
+
+  
+NoMethodError (undefined method `title' for nil:NilClass):
+  
+app/controllers/movies_controller.rb:20:in `create'
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:34:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 10.7ms | Allocations: 16357)
+  Rendered layout layouts/application.html.haml (Duration: 39.0ms | Allocations: 45644)
+Completed 200 OK in 76ms (Views: 42.3ms | ActiveRecord: 0.6ms | Allocations: 78098)
+
+
+  
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:693:in `commit'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:511:in `[]='
+actionpack (7.0.8) lib/action_dispatch/middleware/session/cookie_store.rb:110:in `set_cookie'
+rack (2.2.8) lib/rack/session/abstract/id.rb:403:in `commit_session'
+rack (2.2.8) lib/rack/session/abstract/id.rb:268:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:35:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 9.7ms | Allocations: 16357)
+  Rendered layout layouts/application.html.haml (Duration: 37.3ms | Allocations: 45646)
+Completed 200 OK in 73ms (Views: 41.3ms | ActiveRecord: 0.6ms | Allocations: 78004)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:36:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 6.8ms | Allocations: 16357)
+  Rendered layout layouts/application.html.haml (Duration: 30.4ms | Allocations: 45557)
+Completed 200 OK in 57ms (Views: 33.0ms | ActiveRecord: 0.6ms | Allocations: 77924)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:36:27 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 4.2ms | Allocations: 7204)
+  Rendered layout layouts/application.html.haml (Duration: 8.8ms | Allocations: 15145)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.1ms | Allocations: 18599)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:36:29 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 1.1ms | Allocations: 2158)
+  Rendered layout layouts/application.html.haml (Duration: 2.9ms | Allocations: 4644)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 7133)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:36:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 7.1ms | Allocations: 16357)
+  Rendered layout layouts/application.html.haml (Duration: 33.5ms | Allocations: 45416)
+Completed 200 OK in 58ms (Views: 35.6ms | ActiveRecord: 0.5ms | Allocations: 77794)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:36:51 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 5.8ms | Allocations: 7204)
+  Rendered layout layouts/application.html.haml (Duration: 11.1ms | Allocations: 15146)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.1ms | Allocations: 18593)
+
+
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:37:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.5ms | Allocations: 31416)
+
+
+  
+NameError (uninitialized constant MoviesController::ActiveRecordError):
+  
+app/controllers/movies_controller.rb:16:in `rescue in create'
+app/controllers/movies_controller.rb:13:in `create'
+Started POST "/movies" for 127.0.0.1 at 2023-11-17 14:37:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"", "rating"=>"G", "release_date(1i)"=>"2023", "release_date(2i)"=>"11", "release_date(3i)"=>"17"}, "commit"=>"Save Changes"}
+  [1m[36mMoviegoer Load (0.1ms)[0m  [1m[34mSELECT "moviegoers".* FROM "moviegoers" WHERE "moviegoers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `set_current_user'
+  Rendering layout layouts/application.html.haml
+  Rendering movies/new.html.haml within layouts/application
+  Rendered movies/new.html.haml within layouts/application (Duration: 6.8ms | Allocations: 16357)
+  Rendered layout layouts/application.html.haml (Duration: 30.1ms | Allocations: 45374)
+Completed 200 OK in 56ms (Views: 32.3ms | ActiveRecord: 0.6ms | Allocations: 77756)
+
+
