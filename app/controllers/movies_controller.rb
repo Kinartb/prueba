@@ -3,6 +3,9 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     @all_ratings = Movie.all_ratings
     @ratings_to_show = params[:ratings]&.keys || @all_ratings
+    if @ratings_to_show.present?
+      @movies = Movie.with_ratings(@ratings_to_show)
+    end
   end
   def show
     id = params[:id] # retrieve movie ID from URI route
