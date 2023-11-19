@@ -23,9 +23,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_171655) do
     t.string "title"
     t.string "rating"
     t.text "description"
-    t.datetime "release_date", precision: nil
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "release_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
