@@ -18,7 +18,7 @@ https://github.com/HectorBobbio/PC3_CC3S2/commit/aaa2852ecec14e241f5777b2ca3a934
 https://github.com/HectorBobbio/PC3_CC3S2/commit/aa3a922aa5a073de29a0589fe77f53c87eb993bb
 
 ### Parte 3
-Arturo
+Arturo Hinostroza Olivera
 
 Commits importantes: 
 
