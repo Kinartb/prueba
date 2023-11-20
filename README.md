@@ -2,6 +2,8 @@
 
 ## Link del video
 https://drive.google.com/file/d/15q9J7nrsJQQMClUSFUxdukAr7B13LnML/view?usp=sharing  
+
+Nota: si el link no funciona, se tiene adjunto el video a la entrega del Teams 
 ### Parte 1 
 Pool Lennin Salvatierra Arevalo  
 
