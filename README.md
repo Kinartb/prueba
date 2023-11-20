@@ -3,9 +3,11 @@
 ## Link del video
 
 ### Parte 1 
-Pool
+Pool Lennin Salvatierra Arevalo  
 
-Commits importantes: 
+Commits importantes:  
+https://github.com/HectorBobbio/PC3_CC3S2/commit/dfb10db61fed5c8ba8e09cb9aa9be0b980f94d48  
+https://github.com/HectorBobbio/PC3_CC3S2/commit/482cda4f0294bfff2db460d70ff10cdc21a8e180  
 ### Parte 2
 Hector
 
