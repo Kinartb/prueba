@@ -1,5 +1,9 @@
 # PC3 
 
-- Parte 1 [POOL]
-- Parte 2 [Ector]
-- Parte 3 [Arturo]
+## Link del video
+
+### Parte 1
+
+### Parte 2
+
+### Parte 3
