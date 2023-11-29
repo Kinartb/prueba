@@ -17,6 +17,7 @@
 %table#movies.table.table-sm.table-striped
   %thead
     %tr
+      %th Orden
       %th{class: "#{'hilite' if params[:sort] == "title"}"}
         = link_to "Movie Title", movies_path(:key_ratings => @ratings_to_show, :sort => "title"), id: "title_header"
       %th Rating
@@ -24,8 +25,9 @@
         = link_to "Release Date", movies_path(:key_ratings => @ratings_to_show, :sort => "release_date"), id: "release_date_header"
       %th More Info
   %tbody
-    - @movies.each do |movie|
-      %tr
+    - @movies.each_with_index do |movie, index|
+      %tr{:id => "movie_row_#{index}", :class => "movie_row"}
+        %td= index + 1
         %td= movie.title 
         %td= movie.rating
         %td= movie.release_date
@@ -33,6 +35,3 @@
 
 = link_to 'Add new movie', new_movie_path
 
-
-
-        
